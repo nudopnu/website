@@ -11,6 +11,9 @@ import 'katex/dist/katex.min.css';
 import 'prismjs/themes/prism-tomorrow.css'
 import 'prismjs/components/prism-bash'
 import './App.css';
+import { Breadcrumb, ConfigProvider, theme } from "antd";
+import Header from "./components/Header";
+
 
 const ids = {
   'git': '62f675e9dca84b8488f8db38344e175e',
@@ -27,6 +30,7 @@ class App extends React.Component<{}, { blockMap: any }> {
   }
 
   async componentDidMount() {
+    if (this.state.blockMap !== undefined) return;
     const response = await fetch(`https://notion-api.splitbee.io/v1/page/${ids['git']}`);
     const blockMap = await response.json();
     console.log(blockMap);
@@ -37,18 +41,28 @@ class App extends React.Component<{}, { blockMap: any }> {
     const { blockMap } = this.state;
 
     return (
-      <main>
-        {blockMap ?
-          <NotionRenderer recordMap={{ block: blockMap } as any} components={{
-            Code,
-            Collection,
-            Equation,
-            Modal,
-            Pdf
-          }} fullPage={true} darkMode={true} /> :
-          <p>loading...</p>
-        }
-      </main>
+      <>
+        <ConfigProvider
+          theme={{
+            algorithm: theme.darkAlgorithm
+          }}
+        >
+          <main>
+            {blockMap ?
+              <NotionRenderer showTableOfContents={true} recordMap={{ block: blockMap } as any} components={{
+                Code,
+                Collection,
+                Equation,
+                Modal,
+                Pdf
+              }} fullPage={true} darkMode={true} header={<Header blockMap={blockMap}/>} disableHeader />
+              :
+              <p>loading...</p>
+            }
+          </main>
+        </ConfigProvider>
+
+      </>
     )
   }
 }

@@ -2,11 +2,7 @@ main {
     display: flex;
 }
 
-.dark-mode {
-    --bg-color: #191919;
-    --fg-color: #d4d4d4;
-    --select-color-2: #4e575b;
-}
+
 
 pre[class*="language-"] {
     padding: 3em 2em;

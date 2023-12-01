@@ -3,6 +3,13 @@ html, body {
 }
 
 :root {
+  --fg-color: #d4d4d4;
   color-scheme: light dark;
   background-color: #242424;
+  color: var(--fg-color);
+}
+
+.dark-mode {
+  --bg-color: #191919;
+  --select-color-2: #4e575b;
 }
