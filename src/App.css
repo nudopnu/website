@@ -1,20 +1,52 @@
 main {
     display: flex;
+    justify-content: center;
 }
-
-
 
 pre[class*="language-"] {
     padding: 3em 2em;
+    border-radius: 10px;
 }
 
-.notion-code-copy-button {
-    padding: 0.3em;
+.notion-frame {
+    padding: 0;
+    --notion-max-width: 1000px;
+}
+
+.notion-equation > span {
+    text-align: center;
+}
+
+.notion-app {
+    width: 100%;
+}
+
+.notion-page-content-has-aside {
+    width: 100%;
+}
+
+.notion-page-content-inner {
+    max-width: 600px !important;
+}
+
+.notion-code-copy-button, .notion-code-copy-button:hover {
+    padding: 0.7em;
+    background-color: transparent;
+    border: 1px solid rgba(240, 246, 252, 0.1);
+    box-shadow: none;
+    color: #ccc;
+    font-size: 1em;
+}
+
+.notion-code-copy-button:hover {
+    background-color: #30363d;
+    border: 1px solid #ccc;
 }
 
 .notion-code-copy-tooltip {
-    /* position: relative;
-    top: 0;
-    left: 0; */
     transform: translate(-25%, 0);
+}
+
+.notion-hr {
+    border-color: #454545e6;
 }
