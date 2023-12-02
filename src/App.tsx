@@ -35,7 +35,7 @@ class App extends React.Component<{}, { blockMap: any }> {
 
   async componentDidMount() {
     if (this.state.blockMap !== undefined) return;
-    const response = await fetch(`https://notion-api.splitbee.io/v1/page/${ids.docker}`);
+    const response = await fetch(`https://notion-api.splitbee.io/v1/page/${ids.git}`);
     const blockMap = await response.json();
     console.log(blockMap);
     this.setState({ blockMap });

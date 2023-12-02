@@ -3,14 +3,18 @@ main {
     justify-content: center;
 }
 
+div:has(> .notion-code) {
+    position: relative;
+}
+
 pre[class*="language-"] {
+    position: static;
     padding: 3em 2em;
     border-radius: 10px;
 }
 
 .notion-frame {
     padding: 0;
-    /* --notion-max-width: 1000px; */
     --notion-yellow: rgba(202, 152, 73, 1);
 }
 
@@ -32,6 +36,11 @@ pre[class*="language-"] {
         width: 100%;
         min-width: 720px
     }
+}
+
+.notion-code-copy {
+    top: unset;
+    transform: translate(0, -70%);
 }
 
 .notion-code-copy-button, .notion-code-copy-button:hover {
