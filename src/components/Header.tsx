@@ -1,5 +1,6 @@
 import { Breadcrumb } from "antd";
 import { PageIcon } from 'react-notion-x';
+import { Link } from "react-router-dom";
 
 
 export default function Header({ blockMap }: any) {
@@ -15,7 +16,7 @@ export default function Header({ blockMap }: any) {
     return (
         <header className='notion-header' style={{ display: 'flex', paddingLeft: '15px' }}>
             <Breadcrumb style={{ margin: '16px 0' }} items={[
-                { title: 'Home', path: 'Home' },
+                { title: <Link to={'/'} >Home</Link> },
                 { title: 'Notes', path: 'Notes' },
                 {
                     title: (
@@ -24,7 +25,7 @@ export default function Header({ blockMap }: any) {
                         </div>
                     ),
                 },
-            ]}/>
+            ]} />
         </header>
     );
 }
