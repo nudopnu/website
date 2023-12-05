@@ -3,18 +3,21 @@ import { ids } from "./notion-pages";
 import Meta from "antd/es/card/Meta";
 import './Main.css';
 import { Link } from "react-router-dom";
+import profile from '../assets/profile_small.jpg';
 
 export default function Main() {
     return (
         <>
-            <Avatar size={64} src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=3" />
+            <Avatar size={64} src={profile} />
             <main>
+                <h1>Peter Schramm</h1>
                 <section className="about">
-                    <h1>Hi, I'm a software developer</h1>
                 </section>
+                <Divider />
+                <h1>Notes</h1>
                 <section className="notes">
                     {Object.keys(ids).map((id) =>
-                        <Link to={`notes/${id}`}>
+                        <Link to={`notes/${id}`} key={id}>
                             <Card
                                 hoverable
                                 style={{ width: 140, padding: 20, height: '180px' }}
