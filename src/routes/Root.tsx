@@ -1,5 +1,5 @@
 import { BgColorsOutlined } from '@ant-design/icons';
-import { Breadcrumb, Button, ConfigProvider, theme } from "antd";
+import { Breadcrumb, Button, ConfigProvider, Tooltip, theme } from "antd";
 import React, { useState } from 'react';
 import { PageIcon } from 'react-notion-x';
 import { Link, Outlet, useLocation } from "react-router-dom";
@@ -55,7 +55,9 @@ class RootComponent extends React.Component<{ pathname: string, blockMap: any, s
         <ConfigProvider theme={themeConfig}>
           <header id='root'>
             <Breadcrumb items={items} />
-            <Button size="small" shape="circle" icon={<BgColorsOutlined />} />
+            <Tooltip title={'Sorry, not implemented yet.'} trigger={'click'}>
+              <Button size="small" shape="circle" icon={<BgColorsOutlined />} />
+            </Tooltip>
           </header>
           <main>
             <Outlet context={setBlockMap} />

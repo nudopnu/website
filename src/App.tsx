@@ -1,5 +1,5 @@
 
-import { Button, ConfigProvider, Result, theme } from "antd";
+import { Button, Result } from "antd";
 import React from "react";
 import { Link, RouterProvider, createBrowserRouter } from "react-router-dom";
 import './App.css';
