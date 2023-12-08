@@ -1,0 +1,17 @@
+header#root {
+    position: sticky;
+    top: 0;
+    display: flex;
+    padding-left: 15px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 16px;
+    z-index: 1;
+    background-color: var(--bg-color);
+}
+
+@media (min-width: 1300px) {
+    header#root {
+        background-color: transparent;
+    }
+}

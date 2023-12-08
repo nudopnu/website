@@ -1,7 +1,7 @@
 import { NotionRenderer } from "react-notion-x";
 import { Code } from 'react-notion-x/build/third-party/code';
 import { Equation } from 'react-notion-x/build/third-party/equation';
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useOutletContext, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import { Skeleton } from 'antd';
 import 'react-notion-x/src/styles.css';
@@ -18,6 +18,7 @@ import { Params } from "../lib/params.type";
 
 type NoteProps = {
     pageId: keyof typeof ids;
+    setBlockMap: any;
 };
 
 export async function loader({ params }: Params<NoteProps>) {
@@ -33,10 +34,16 @@ class NoteComponent extends React.Component<NoteProps> {
     };
 
     async componentDidMount(): Promise<void> {
-        const { pageId } = this.props;
+        const { pageId, setBlockMap } = this.props;
         const response = await fetch(`https://notion-api.splitbee.io/v1/page/${ids[pageId].id}`);
         const blockMap = await response.json();
         this.setState((state) => ({ ...state, blockMap }));
+        setBlockMap(blockMap);
+    }
+
+    componentWillUnmount(): void {
+        const { setBlockMap } = this.props;
+        setBlockMap(undefined);
     }
 
     render(): React.ReactNode {
@@ -48,9 +55,14 @@ class NoteComponent extends React.Component<NoteProps> {
                     <NotionRenderer showTableOfContents={true} recordMap={{ block: blockMap } as any} components={{
                         Code,
                         Equation,
-                    }} fullPage={true} darkMode={true} header={<Header blockMap={blockMap} />} disableHeader />
+                    }} fullPage={true} darkMode={true} disableHeader={true} />
                     :
-                    <article>
+                    <article style={{ width: '720px' }}>
+                        <div style={{ height: '150px' }}></div>
+                        <Skeleton active />
+                        <Skeleton active />
+                        <div style={{ height: '50px' }}></div>
+                        <Skeleton active />
                         <Skeleton active />
                     </article>
                 }
@@ -60,5 +72,6 @@ class NoteComponent extends React.Component<NoteProps> {
 }
 
 export default function Note() {
-    return <NoteComponent {...(useParams() as NoteProps)} />;
+    const setBlockMap = useOutletContext();
+    return <NoteComponent {...({ ...useParams(), setBlockMap } as NoteProps)} />;
 }
