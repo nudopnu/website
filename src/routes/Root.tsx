@@ -33,7 +33,7 @@ class RootComponent extends React.Component<{ pathname: string, blockMap: any, s
         .split('/')
         .filter(e => e)
         .map(name => ({
-          title: <Link to={'/'}>{name}</Link>
+          title: <Link to={'/'}>{name.at(0)?.toUpperCase() + name.slice(1)}</Link>
         })),
     ];
   }
