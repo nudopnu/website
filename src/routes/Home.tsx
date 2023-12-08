@@ -1,11 +1,11 @@
 import { Avatar, Card, Divider } from "antd";
 import { ids } from "./notion-pages";
 import Meta from "antd/es/card/Meta";
-import './Main.css';
+import './Home.css';
 import { Link } from "react-router-dom";
 import profile from '../assets/profile_small.jpg';
 
-export default function Main() {
+export default function Home() {
     return (
         <>
             <Avatar size={64} src={profile} />
