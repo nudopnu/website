@@ -1,11 +1,15 @@
 import { BgColorsOutlined } from '@ant-design/icons';
-import { Breadcrumb, Button } from "antd";
+import { Breadcrumb, Button, ConfigProvider, theme } from "antd";
 import React, { useState } from 'react';
 import { PageIcon } from 'react-notion-x';
 import { Link, Outlet, useLocation } from "react-router-dom";
 import './Root.css';
 
 class RootComponent extends React.Component<{ pathname: string, blockMap: any, setBlockMap: any }>{
+
+  state = {
+    darkmode: true,
+  };
 
   getItemsFromPathname(pathname: string, blockMap?: any) {
     if (blockMap) {
@@ -38,16 +42,25 @@ class RootComponent extends React.Component<{ pathname: string, blockMap: any, s
 
     const { pathname, blockMap, setBlockMap } = this.props;
     const items = this.getItemsFromPathname(pathname, blockMap);
+    const { darkmode } = this.state;
+    const themeConfig = {
+      algorithm: darkmode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+    };
+    if (darkmode) {
+      document.body.classList.add('dark-mode');
+    }
 
     return (
       <>
-        <header id='root'>
-          <Breadcrumb items={items} />
-          <Button size="small" shape="circle" icon={<BgColorsOutlined />} />
-        </header>
-        <main>
-          <Outlet context={setBlockMap} />
-        </main>
+        <ConfigProvider theme={themeConfig}>
+          <header id='root'>
+            <Breadcrumb items={items} />
+            <Button size="small" shape="circle" icon={<BgColorsOutlined />} />
+          </header>
+          <main>
+            <Outlet context={setBlockMap} />
+          </main>
+        </ConfigProvider>
       </>
     );
   }

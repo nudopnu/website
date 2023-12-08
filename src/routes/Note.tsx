@@ -1,8 +1,7 @@
 import { NotionRenderer } from "react-notion-x";
 import { Code } from 'react-notion-x/build/third-party/code';
 import { Equation } from 'react-notion-x/build/third-party/equation';
-import { useLoaderData, useOutletContext, useParams } from "react-router-dom";
-import Header from "../components/Header";
+import { useOutletContext, useParams } from "react-router-dom";
 import { Skeleton } from 'antd';
 import 'react-notion-x/src/styles.css';
 import 'katex/dist/katex.min.css';
@@ -15,6 +14,7 @@ import '../components/Notion.css';
 import { ids } from "./notion-pages";
 import React from "react";
 import { Params } from "../lib/params.type";
+import './Note.css';
 
 type NoteProps = {
     pageId: keyof typeof ids;
@@ -57,9 +57,8 @@ class NoteComponent extends React.Component<NoteProps> {
                         Equation,
                     }} fullPage={true} darkMode={true} disableHeader={true} />
                     :
-                    <article style={{ width: '720px' }}>
-                        <div style={{ height: '150px' }}></div>
-                        <Skeleton active />
+                    <article id="placeholder">
+                           <Skeleton active />
                         <Skeleton active />
                         <div style={{ height: '50px' }}></div>
                         <Skeleton active />

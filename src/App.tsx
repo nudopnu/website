@@ -39,26 +39,13 @@ const routes = [
 
 class App extends React.Component {
 
-  state = {
-    darkmode: true,
-  };
-
   render() {
-    const { darkmode } = this.state;
-    const themeConfig = {
-      algorithm: darkmode ? theme.darkAlgorithm : theme.defaultAlgorithm,
-    };
-    if (darkmode) {
-      document.body.classList.add('dark-mode');
-    }
     const router = createBrowserRouter(routes);
-
     return (
-      <ConfigProvider theme={themeConfig}>
-        <RouterProvider router={router} />
-      </ConfigProvider>
+      <RouterProvider router={router} />
     )
   }
+
 }
 
 export default App

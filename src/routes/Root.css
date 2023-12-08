@@ -9,9 +9,3 @@ header#root {
     z-index: 1;
     background-color: var(--bg-color);
 }
-
-@media (min-width: 1300px) {
-    header#root {
-        background-color: transparent;
-    }
-}
