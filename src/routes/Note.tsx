@@ -38,8 +38,16 @@ class NoteComponent extends React.Component<NoteProps> {
         const { pageId, setBlockMap } = this.props;
         const response = await fetch(`https://notion-api.splitbee.io/v1/page/${ids[pageId].id}`);
         const blockMap = await response.json();
-        this.setState((state) => ({ ...state, blockMap }));
+        this.setState((state) => ({ ...state, blockMap }), () => this.fixAnchors(pageId));
         setBlockMap(blockMap);
+    }
+
+    private fixAnchors(pageId: string) {
+        document.querySelectorAll('a').forEach(link => {
+            if (link.href.indexOf('#') !== -1) {
+                link.href = `/notes/${pageId}#${link.href.split('#')[1]}`;
+            }
+        });
     }
 
     componentWillUnmount(): void {
