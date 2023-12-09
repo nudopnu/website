@@ -18,6 +18,7 @@ import './Note.css';
 
 type NoteProps = {
     pageId: keyof typeof ids;
+    darkmode: boolean;
     setBlockMap: any;
 };
 
@@ -48,6 +49,7 @@ class NoteComponent extends React.Component<NoteProps> {
 
     render(): React.ReactNode {
         const { blockMap } = this.state;
+        const { darkmode } = this.props;
 
         return (
             <>
@@ -55,10 +57,10 @@ class NoteComponent extends React.Component<NoteProps> {
                     <NotionRenderer showTableOfContents={true} recordMap={{ block: blockMap } as any} components={{
                         Code,
                         Equation,
-                    }} fullPage={true} darkMode={true} disableHeader={true} />
+                    }} fullPage={true} darkMode={darkmode} disableHeader={true} />
                     :
                     <article id="placeholder">
-                           <Skeleton active />
+                        <Skeleton active />
                         <Skeleton active />
                         <div style={{ height: '50px' }}></div>
                         <Skeleton active />
@@ -71,6 +73,5 @@ class NoteComponent extends React.Component<NoteProps> {
 }
 
 export default function Note() {
-    const setBlockMap = useOutletContext();
-    return <NoteComponent {...({ ...useParams(), setBlockMap } as NoteProps)} />;
+    return <NoteComponent {...({ ...useParams(), ...useOutletContext() } as NoteProps)} />;
 }

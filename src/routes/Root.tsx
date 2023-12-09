@@ -1,5 +1,5 @@
 import { BgColorsOutlined } from '@ant-design/icons';
-import { Breadcrumb, Button, ConfigProvider, Tooltip, theme } from "antd";
+import { Breadcrumb, Button, ConfigProvider, Divider, theme } from "antd";
 import React, { useState } from 'react';
 import { PageIcon } from 'react-notion-x';
 import { Link, Outlet, useLocation } from "react-router-dom";
@@ -38,6 +38,16 @@ class RootComponent extends React.Component<{ pathname: string, blockMap: any, s
     ];
   }
 
+  onToggleDarkmode() {
+    const darkmode = !this.state.darkmode;
+    this.setState({ ...this.state, darkmode });
+    if (darkmode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }
+
   render(): React.ReactNode {
 
     const { pathname, blockMap, setBlockMap } = this.props;
@@ -54,13 +64,14 @@ class RootComponent extends React.Component<{ pathname: string, blockMap: any, s
       <>
         <ConfigProvider theme={themeConfig}>
           <header id='root'>
-            <Breadcrumb items={items} />
-            <Tooltip title={'Sorry, not implemented yet.'} trigger={'click'}>
-              <Button size="small" shape="circle" icon={<BgColorsOutlined />} />
-            </Tooltip>
+            <nav>
+              <Breadcrumb items={items} />
+              <Button onClick={this.onToggleDarkmode.bind(this)} size="small" shape="circle" icon={<BgColorsOutlined />} />
+            </nav>
+            <Divider />
           </header>
           <main>
-            <Outlet context={setBlockMap} />
+            <Outlet context={{ setBlockMap, darkmode }} />
           </main>
         </ConfigProvider>
       </>

@@ -1,11 +1,18 @@
 header#root {
     position: sticky;
     top: 0;
-    display: flex;
     padding-left: 15px;
     align-items: center;
-    justify-content: space-between;
-    padding: 16px 16px;
+    padding: 16px 16px 0;
     z-index: 1;
     background-color: var(--bg-color);
+}
+
+#root > nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+#root > .ant-divider {
+    margin: 16px 0 0;
 }
