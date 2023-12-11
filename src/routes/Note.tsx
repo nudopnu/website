@@ -11,7 +11,7 @@ import 'prismjs/components/prism-yaml';
 import 'prismjs/components/prism-docker';
 import 'prismjs/components/prism-python';
 import '../components/Notion.css';
-import { ids } from "./notion-pages";
+import { ids } from "../contents/notion-pages";
 import React from "react";
 import { Params } from "../lib/params.type";
 import './Note.css';

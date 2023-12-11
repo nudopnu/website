@@ -1,5 +1,5 @@
 import { Avatar, Card, Divider } from "antd";
-import { ids } from "./notion-pages";
+import { ids } from "../contents/notion-pages";
 import Meta from "antd/es/card/Meta";
 import './Home.css';
 import { Link } from "react-router-dom";
