@@ -64,7 +64,7 @@ class RootComponent extends React.Component<{ pathname: string, blockMap: any, s
       <>
         <ConfigProvider theme={themeConfig}>
           <header id='root'>
-            <nav>
+            <nav style={{ padding: '0 16px' }}>
               <Breadcrumb items={items} />
               <Button onClick={this.onToggleDarkmode.bind(this)} size="small" shape="circle" icon={<BgColorsOutlined />} />
             </nav>
