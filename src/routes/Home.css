@@ -15,8 +15,8 @@ section.notes {
 section.about {
     display: flex;
     gap: 2rem;
-    padding: 2rem;
-    width: 720px;
+    padding: 2rem 0;
+    width: var(--notion-max-width);
     max-width: 90%;
 }
 

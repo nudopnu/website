@@ -29,7 +29,7 @@ pre[class*="language-"] {
     .notion-page-content-inner {
         margin: auto;
         width: 100%;
-        min-width: 720px
+        min-width: var(--notion-max-width);
     }
 }
 

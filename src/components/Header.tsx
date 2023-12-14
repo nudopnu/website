@@ -15,7 +15,7 @@ export default function Header({ blockMap }: any) {
 
     return (
         <header className='notion-header' style={{ display: 'flex', paddingLeft: '15px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }} items={[
+            <Breadcrumb items={[
                 { title: <Link to={'/'} >Home</Link> },
                 { title: 'Notes', path: 'Notes' },
                 {
