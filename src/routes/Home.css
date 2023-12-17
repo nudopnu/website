@@ -27,6 +27,28 @@ section.about {
     }
 }
 
+img.profile {
+    --_g: 10% /45% 45% no-repeat linear-gradient(#000 0 0);
+    --mask:
+        left var(--_i, 0%) top var(--_g),
+        bottom var(--_i, 0%) left var(--_g),
+        top var(--_i, 0%) right var(--_g),
+        right var(--_i, 0%) bottom var(--_g);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    filter: hue-rotate(-10deg);
+    transition: .3s linear;
+    cursor: pointer;
+}
+
+img.profile:hover {
+    --_i: 10%;
+}
+
+img.proile:active {
+    transform: scale(1.05);
+}
+
 .ant-card-body {
     padding: 0 !important;
 }

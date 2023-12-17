@@ -12,8 +12,8 @@ export default function Home() {
         <>
             <main>
                 <section className="about">
-                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <img src={profile} alt="profile picture" style={{ width: '130px', borderRadius: '10px', height: 'fit-content' }} />
+                    <div id="profile" style={{ display: 'flex', alignItems: 'center' }}>
+                        <img className="profile" src={profile} alt="profile picture" style={{ width: '130px', borderRadius: '10px', height: 'fit-content' }} />
                     </div>
                     <div>
                         <h1>Peter Schramm</h1>
