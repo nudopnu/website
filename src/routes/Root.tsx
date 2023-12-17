@@ -42,9 +42,9 @@ class RootComponent extends React.Component<{ pathname: string, blockMap: any, s
     const darkmode = !this.state.darkmode;
     this.setState({ ...this.state, darkmode });
     if (darkmode) {
-      document.body.classList.add('dark-mode');
+      document.documentElement.classList.add('dark-mode');
     } else {
-      document.body.classList.remove('dark-mode');
+      document.documentElement.classList.remove('dark-mode');
     }
   }
 
@@ -57,7 +57,7 @@ class RootComponent extends React.Component<{ pathname: string, blockMap: any, s
       algorithm: darkmode ? theme.darkAlgorithm : theme.defaultAlgorithm,
     };
     if (darkmode) {
-      document.body.classList.add('dark-mode');
+      document.documentElement.classList.add('dark-mode');
     }
 
     return (
@@ -73,6 +73,7 @@ class RootComponent extends React.Component<{ pathname: string, blockMap: any, s
           <main>
             <Outlet context={{ setBlockMap, darkmode }} />
           </main>
+          <footer style={{ minHeight: '200px', backgroundColor: 'var(--bg-color)' }}></footer>
         </ConfigProvider>
       </>
     );
