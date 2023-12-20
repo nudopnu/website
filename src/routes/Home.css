@@ -12,6 +12,14 @@ section.notes {
     overflow-x: scroll;
 }
 
+section.notes> :first-child {
+    padding-left: 1rem;
+}
+
+section.notes> :last-child {
+    padding-right: 1rem;
+}
+
 section.about {
     display: flex;
     gap: 2rem;
@@ -24,6 +32,10 @@ section.about {
     section.notes {
         flex-wrap: wrap;
         overflow-x: unset;
+    }
+
+    section.notes>a {
+        padding: 0 !important;
     }
 }
 
@@ -39,6 +51,7 @@ img.profile {
     filter: hue-rotate(-10deg);
     transition: .3s linear;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 img.profile:hover {
