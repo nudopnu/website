@@ -21,7 +21,7 @@ jobs:
       run: npm install
 
     - name: Build
-      run: npm run build:prod
+      run: npm run build
 
     - name: Pushes to another repository
       uses: cpina/github-action-push-to-another-repository@main
