@@ -5,7 +5,7 @@ import profile from '../assets/profile.jpg';
 import { ids } from "../contents/notion-pages";
 import './Home.css';
 import Link from "antd/es/typography/Link";
-import { MailOutlined } from '@ant-design/icons';
+import { MailOutlined, GithubOutlined } from '@ant-design/icons';
 
 export default function Home() {
     return (
@@ -26,15 +26,22 @@ export default function Home() {
                             at the University of Applied Sciences in Trier.
                         </p>
                         <p>
-                            <Link href="mailto:p.schramm@wir.hochschule-trier.de">
+                            <Link href="mailto:peter_schramm@live.de">
                                 <MailOutlined />
-                                <span> Contact me</span>
+                                <span> Mail </span>
+                            </Link>
+                            <Link href="https://github.com/nudopnu" target="_blank">
+                                <GithubOutlined />
+                                <span> GitHub </span>
                             </Link>
                         </p>
                     </div>
                 </section>
                 <Divider />
                 <h1>Notes</h1>
+                <p className="block">
+                    "I like taking notes while learning a new technology. I often refer to them when I have to redo a certain task that I've already done before. Here, I published some of them to have them available everywhere I go. Maybe you will find something useful in it."
+                </p>
                 <section className="notes">
                     {Object.keys(ids).map((id) =>
                         <RouterLink to={`notes/${id}`} key={id}>
