@@ -22,7 +22,7 @@ export default function Home() {
                         </p>
                         <p>
                             Passionate about web-app development.
-                            Currently working as a scientific assistant
+                            Currently working as a Research Associate 
                             at the University of Applied Sciences in Trier.
                         </p>
                         <p>
