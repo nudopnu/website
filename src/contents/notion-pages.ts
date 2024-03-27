@@ -25,7 +25,7 @@ export const ids = {
     description: 'Angular tipps & tricks'
   },
   "fast-api": {
-    id: "7ada5b00da8249f7846bff1f1fc07ce6",
+    id: "7d8ee8cefcc54097a3d560e3813670d8",
     icon: "https://www.notion.so/image/https%3A%2F%2Fcdn.worldvectorlogo.com%2Flogos%2Ffastapi.svg?table=block&id=7ada5b00-da82-49f7-846b-ff1f1fc07ce6&spaceId=a8098303-71b1-4246-9d39-c8e55d67be07",
     description: "FastAPI code snippets",
   },
