@@ -8,7 +8,7 @@ const PrismDarkTheme: React.FC = () => {
     setCache('PrismDarkTheme', styleSheet);
     
     React.useEffect(() => {
-        cache.disabled = false;
+        if(cache) cache.disabled = false;
         return () => {
             cache.disabled = true;
         };
