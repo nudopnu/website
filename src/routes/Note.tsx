@@ -45,11 +45,13 @@ class NoteComponent extends React.Component<NoteProps> {
     }
 
     private fixAnchors(pageId: string) {
-        document.querySelectorAll('a').forEach(link => {
-            if (link.href.indexOf('#') !== -1) {
-                link.href = `/notes/${pageId}#${link.href.split('#')[1]}`;
-            }
-        });
+        setTimeout(() => {
+            document.querySelectorAll('a').forEach(link => {
+                if (link.href.indexOf('#') !== -1) {
+                    link.href = `/notes/${pageId}#${link.href.split('#')[1]}`;
+                }
+            });
+        }, 100);
     }
 
     componentWillUnmount(): void {
