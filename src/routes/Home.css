@@ -31,6 +31,8 @@ section.about {
 @media (min-width: 720px) {
     section.notes {
         flex-wrap: wrap;
+        justify-content: center;
+        max-width: 800px;
         overflow-x: unset;
     }
 

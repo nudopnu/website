@@ -4,8 +4,13 @@ div:has(> .notion-code) {
 
 pre[class*="language-"] {
     position: static;
-    padding: 3em 2em;
+    padding: 3em 2em !important;
     border-radius: 10px;
+    background-color: #f5f2f0 !important;
+}
+
+.dark-mode pre[class*="language-"] {
+    background-color: #2d2d2d !important;
 }
 
 .notion-frame {
@@ -13,7 +18,7 @@ pre[class*="language-"] {
     --notion-yellow: rgba(202, 152, 73, 1);
 }
 
-.notion-equation > span {
+.notion-equation>span {
     text-align: center;
 }
 
@@ -38,7 +43,8 @@ pre[class*="language-"] {
     transform: translate(0, -70%);
 }
 
-.notion-code-copy-button, .notion-code-copy-button:hover {
+.notion-code-copy-button,
+.notion-code-copy-button:hover {
     padding: 0.7em;
     background-color: transparent;
     border: 1px solid rgba(240, 246, 252, 0.1);
@@ -48,6 +54,10 @@ pre[class*="language-"] {
 }
 
 .notion-code-copy-button:hover {
+    border: 1px solid #cfcfcf;
+}
+
+.dark-mode .notion-code-copy-button:hover {
     background-color: #30363d;
     border: 1px solid #ccc;
 }
@@ -56,17 +66,63 @@ pre[class*="language-"] {
     transform: translate(-25%, 0);
 }
 
-.notion-hr {
-    border-color: #454545e6;
+.dark-mode .notion-hr {
+    border-color: #454545e6 !important;
 }
 
 .notion-asset-caption {
+    color: rgb(87 87 87 / 44%);
+}
+
+.dark-mode .notion-asset-caption {
     color: rgba(255, 255, 255, 0.443);
 }
 
 .notion-inline-code {
-    color: #60a0cf;
+    color: #0c5bc1;
     padding: 0.1em 0.3em;
-    background: #2d2d2d;
     border-radius: 3px;
+}
+
+.dark-mode .notion-inline-code {
+    color: #60a0cf;
+    background: #2d2d2d;
+}
+
+/* Fix round borders for table */
+.notion-simple-table {
+    border-collapse: separate !important;
+    border: none;
+}
+
+.notion-simple-table tr:first-child td {
+    background-color: #f5f2f0;
+}
+
+.dark-mode .notion-simple-table tr:first-child td {
+    background-color: rgb(199 194 180 / 15%);
+}
+
+.notion-simple-table tr:first-child td:first-child {
+    border-top-left-radius: 8px;
+}
+
+.notion-simple-table tr:first-child td:last-child {
+    border-top-right-radius: 8px;
+}
+
+.notion-simple-table tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+
+.notion-simple-table tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+}
+
+.notion-simple-table tr:not(:first-child) td {
+    border-top: none;
+}
+
+.notion-simple-table td:not(:first-child) {
+    border-left: none;
 }

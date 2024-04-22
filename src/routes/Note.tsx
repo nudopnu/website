@@ -5,7 +5,6 @@ import { useOutletContext, useParams } from "react-router-dom";
 import { Skeleton } from 'antd';
 import 'react-notion-x/src/styles.css';
 import 'katex/dist/katex.min.css';
-import 'prismjs/themes/prism-tomorrow.css';
 import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-yaml';
 import 'prismjs/components/prism-docker';
@@ -15,6 +14,9 @@ import { ids } from "../contents/notion-pages";
 import React from "react";
 import { Params } from "../lib/params.type";
 import './Note.css';
+
+const DarkTheme = React.lazy(() => import('./PrismDarkTheme'));
+const LightTheme = React.lazy(() => import('./PrismLightTheme'));
 
 type NoteProps = {
     pageId: keyof typeof ids;
@@ -59,21 +61,30 @@ class NoteComponent extends React.Component<NoteProps> {
         const { blockMap } = this.state;
         const { darkmode } = this.props;
 
+        const ThemeComponent = darkmode ? DarkTheme : LightTheme;
+
+        const PlaceHolder = <article id="placeholder">
+            <Skeleton active />
+            <Skeleton active />
+            <div style={{ height: '50px' }}></div>
+            <Skeleton active />
+            <Skeleton active />
+        </article>;
+
         return (
             <>
                 {blockMap ?
-                    <NotionRenderer showTableOfContents={true} recordMap={{ block: blockMap } as any} components={{
-                        Code,
-                        Equation,
-                    }} fullPage={true} darkMode={darkmode} disableHeader={true} />
+                    <>
+                        <React.Suspense fallback={PlaceHolder}>
+                            <ThemeComponent />
+                            <NotionRenderer showTableOfContents={true} recordMap={{ block: blockMap } as any} components={{
+                                Code,
+                                Equation,
+                            }} fullPage={true} darkMode={darkmode} disableHeader={true} />
+                        </React.Suspense>
+                    </>
                     :
-                    <article id="placeholder">
-                        <Skeleton active />
-                        <Skeleton active />
-                        <div style={{ height: '50px' }}></div>
-                        <Skeleton active />
-                        <Skeleton active />
-                    </article>
+                    PlaceHolder
                 }
             </>
         );

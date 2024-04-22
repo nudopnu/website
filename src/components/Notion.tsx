@@ -8,10 +8,6 @@ import { Modal } from 'react-notion-x/build/third-party/modal';
 import { Pdf } from 'react-notion-x/build/third-party/pdf';
 import 'react-notion-x/src/styles.css';
 import 'katex/dist/katex.min.css';
-import 'prismjs/themes/prism-tomorrow.css'
-import 'prismjs/components/prism-bash'
-import 'prismjs/components/prism-yaml'
-import 'prismjs/components/prism-docker'
 import { ConfigProvider, theme } from "antd";
 import Header from "./Header";
 import "./Notion.css";
