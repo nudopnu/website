@@ -6,11 +6,11 @@ const PrismLightTheme: React.FC = () => {
     const cache = getCache('PrismLightTheme');
     const styleSheet = cache || document.styleSheets[document.styleSheets.length - 1];
     setCache('PrismLightTheme', styleSheet);
-    
+
     React.useEffect(() => {
-        if(cache) cache.disabled = false;
+        if (cache) cache.disabled = false;
         return () => {
-            cache.disabled = true;
+            if (cache) cache.disabled = true;
         };
     }, []);
     return null;
