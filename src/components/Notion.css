@@ -93,6 +93,7 @@ pre[class*="language-"] {
 .notion-simple-table {
     border-collapse: separate !important;
     border: none;
+    margin: 16px auto;
 }
 
 .notion-simple-table tr:first-child td {
