@@ -13,7 +13,9 @@ class RootComponent extends React.Component<{ pathname: string, blockMap: any, s
 
   getItemsFromPathname(pathname: string, blockMap?: any) {
     if (blockMap) {
-      const pageBlock = Object.values<any>(blockMap).filter(e => e.value.type === 'page')[0].value;
+      console.log(blockMap);
+      
+      const pageBlock = Object.values<any>(blockMap).filter(e => e.value?.type === 'page')[0].value;
       const title = pageBlock.properties.title[0] as string;
       return [
         { title: <Link to={'/'} >Home</Link> },

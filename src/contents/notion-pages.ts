@@ -6,12 +6,12 @@ export const ids = {
   },
   bash: {
     id: "db93dbcfad44404f958554099625a3e8",
-    icon: "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fac702ca1-dc28-4f87-984b-6c84e5cfe24c%2FApps-Terminal-Pc-104-icon.png?table=block&id=db93dbcf-ad44-404f-9585-54099625a3e8&spaceId=a8098303-71b1-4246-9d39-c8e55d67be07&width=250&userId=9082ecd1-d93e-4ed3-8ba7-33c7ebf6103b&cache=v2",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Bash_Logo_Colored.svg",
     description: "Snippets for Unix stuff",
   },
   docker: {
     id: "0e85c98660154326b950a51d2d148360",
-    icon: 'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1e3fa934-5778-46a9-a0b8-57856c9c2df6%2F919853.png?table=block&id=0e85c986-6015-4326-b950-a51d2d148360&spaceId=a8098303-71b1-4246-9d39-c8e55d67be07&width=250&userId=9082ecd1-d93e-4ed3-8ba7-33c7ebf6103b&cache=v2',
+    icon: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Docker_%28container_engine%29_logo_%28cropped%29.png",
     description: 'Docker code snippets',
   },
   "ml-toolkit": {
@@ -21,7 +21,7 @@ export const ids = {
   },
   angular: {
     id: "38202efb0c59482fa63b95a2f4330ca0",
-    icon: "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fcee5100c-27b6-4a35-a72f-82ebbdda3360%2F2048px-Angular_full_color_logo.svg.png?table=block&id=38202efb-0c59-482f-a63b-95a2f4330ca0&spaceId=a8098303-71b1-4246-9d39-c8e55d67be07&userId=9082ecd1-d93e-4ed3-8ba7-33c7ebf6103b&cache=v2",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Angular_gradient.png",
     description: 'Angular tipps & tricks'
   },
   "fast-api": {
@@ -31,12 +31,12 @@ export const ids = {
   },
   ngrok: {
     id: "63cd23ed26f74f5e929ab96028560675",
-    icon: "https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fa8098303-71b1-4246-9d39-c8e55d67be07%2F0e648c48-3122-4833-9e94-a8a42fdbfbc1%2Ftemp.png?table=block&id=63cd23ed-26f7-4f5e-929a-b96028560675&spaceId=a8098303-71b1-4246-9d39-c8e55d67be07&width=250&userId=9082ecd1-d93e-4ed3-8ba7-33c7ebf6103b&cache=v2",
+    icon: "https://cdn.brandfetch.io/id3QqXlVah/w/400/h/400/theme/dark/icon.jpeg?c=1bx1742050235335id64Mup7acMpvpFFJd&t=1732025337371",
     description: "ngrok code snippets",
   },
   python: {
     id: "339ae3e5426a46f1af3f1137d3dc20e0",
-    icon: "https://www.notion.so/image/https%3A%2F%2Fcdn.iconscout.com%2Ficon%2Ffree%2Fpng-256%2Fpython-20-1175115.png?table=block&id=339ae3e5-426a-46f1-af3f-1137d3dc20e0&spaceId=a8098303-71b1-4246-9d39-c8e55d67be07&userId=9082ecd1-d93e-4ed3-8ba7-33c7ebf6103b&cache=v2",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Python_logo_01.svg",
     description: "Various Python snippets",
   }
 };
