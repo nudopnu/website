@@ -11,25 +11,25 @@
   },
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
-    "antd": "^5.11.5",
+    "antd": "^5.23.2",
     "better-react-mathjax": "^2.0.3",
     "mathjax": "^3.2.2",
     "prismjs": "^1.29.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-notion-x": "^6.16.0",
-    "react-router-dom": "^6.20.1"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-notion-x": "^7.2.6",
+    "react-router-dom": "^6.28.2"
   },
   "devDependencies": {
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
-    "@typescript-eslint/eslint-plugin": "^6.10.0",
-    "@typescript-eslint/parser": "^6.10.0",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "eslint": "^8.53.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.4",
-    "typescript": "^5.2.2",
-    "vite": "^5.0.0"
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitejs/plugin-react-swc": "^3.7.2",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "typescript": "^5.7.3",
+    "vite": "^5.4.14"
   }
 }
