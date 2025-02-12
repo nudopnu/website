@@ -5,3 +5,7 @@ main {
     align-items: center;
     color: var(--fg-color);
 }
+
+.ant-result-title, .ant-result-subtitle {
+    color: inherit !important;
+}
